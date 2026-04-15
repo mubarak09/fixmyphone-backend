@@ -1,0 +1,30 @@
+{
+  "name": "fixmyphone-backend",
+  "version": "1.0.0",
+  "description": "FixMyPhone - Node.js/Express backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mubarak09/fixmyphone-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mubarak09/fixmyphone-backend/issues"
+  },
+  "homepage": "https://github.com/mubarak09/fixmyphone-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
