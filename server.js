@@ -29,11 +29,13 @@ connectDB()
 const issueRoutes = require('./routes/issueRoutes')
 const questionRoutes = require('./routes/questionRoutes')
 const diagnoseRoutes = require('./routes/diagnoseRoutes')
+const signalRoutes = require('./routes/signalRoutes')
 
 // Register routes with their base paths
 app.use('/api/issues', issueRoutes)
 app.use('/api/questions', questionRoutes)
 app.use('/api/diagnose', diagnoseRoutes)
+app.use('/api/signal', signalRoutes)
 
 // Health check route to confirm the server is running
 app.get('/api/health', (req, res) => {
