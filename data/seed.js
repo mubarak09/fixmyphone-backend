@@ -28,6 +28,7 @@ const Issue = require('../models/Issue')
 const Question = require('../models/Question')
 const Cause = require('../models/Cause')
 const Rule = require('../models/Rule')
+const SignalScenario = require('../models/SignalScenario')
 
 // ============================================================
 // ISSUES DATA
@@ -681,6 +682,159 @@ const rulesData = [
 ]
 
 // ============================================================
+// SIGNAL SCENARIOS DATA
+// Simulated signal scenarios based on user context
+// ============================================================
+
+const signalScenariosData = [
+  {
+    scenarioId: 'no-signal-everywhere-any-network',
+    title: 'Complete loss of service',
+    explanation: 'You have no signal anywhere you go regardless of your network mode. This strongly suggests either a network outage in your area, an account issue or a problem with your SIM card.',
+    signalRating: 'no-signal',
+    conditions: {
+      locationType: null,
+      issueFrequency: 'everywhere',
+      networkMode: null,
+      simStatus: 'active'
+    },
+    fixSteps: [
+      { step: 1, title: 'Check for a network outage', detail: 'Visit your network provider\'s website or app and check for any reported outages in your area.' },
+      { step: 2, title: 'Remove and reinsert your SIM card', detail: 'Power off your phone, remove the SIM card, wait 10 seconds and reinsert it. Power back on and check for signal.' },
+      { step: 3, title: 'Toggle airplane mode on and off', detail: 'Turn airplane mode on for 30 seconds then turn it off again. This forces your phone to search for a network.' },
+      { step: 4, title: 'Manually select network', detail: 'Go to Settings → Connections → Mobile Networks → Network Operators, then turn off Select Automatically and choose your network provider manually from the list.'},
+      { step: 5, title: 'Contact your network provider', detail: 'If none of the above work, contact your provider. They can check if your account is active and if there is a network issue in your area.' }
+    ]
+  },
+  {
+    scenarioId: 'no-signal-sim-issue',
+    title: 'SIM card not being recognised',
+    explanation: 'You have no signal and your SIM status is showing as inactive or unrecognised. This points directly to a SIM card issue rather than a network problem.',
+    signalRating: 'no-signal',
+    conditions: {
+      locationType: null,
+      issueFrequency: 'everywhere',
+      networkMode: null,
+      simStatus: 'inactive'
+    },
+    fixSteps: [
+      { step: 1, title: 'Remove and reinsert your SIM card', detail: 'Power off your phone completely, remove the SIM card using the SIM tray tool, inspect it for damage, then reinsert and power back on.' },
+      { step: 2, title: 'Manually select network', detail: 'Go to Settings → Connections → Mobile Networks → Network Operators, then turn off Select Automatically and choose your network provider manually from the list.'},
+      { step: 3, title: 'Test your SIM in another phone', detail: 'Insert your SIM into a different phone to check if the SIM itself is working. If it works in another phone the issue is with your device.' },
+      { step: 4, title: 'Request a SIM replacement', detail: 'Contact your network provider and request a free SIM replacement. This is a common fix for SIM recognition issues.' }
+    ]
+  },
+  {
+    scenarioId: 'weak-signal-indoors',
+    title: 'Weak signal indoors',
+    explanation: 'Your signal is weak mainly when you are indoors. Building materials such as concrete, metal and thick walls block mobile signals significantly. This is a coverage issue rather than a network fault.',
+    signalRating: 'poor',
+    conditions: {
+      locationType: 'indoors',
+      issueFrequency: 'one-location',
+      networkMode: null,
+      simStatus: 'active'
+    },
+    fixSteps: [
+      { step: 1, title: 'Move closer to a window', detail: 'Glass blocks far less signal than walls. Moving near a window can dramatically improve your signal strength indoors.' },
+      { step: 2, title: 'Go to a higher floor if possible', detail: 'Signal strength often improves on higher floors as there are fewer obstacles between you and the nearest mast.' },
+      { step: 3, title: 'Enable Wi-Fi calling', detail: 'Go to Settings → Phone → Wi-Fi Calling and enable it. This routes your calls and texts over Wi-Fi when mobile signal is weak.' },
+      { step: 4, title: 'Check your network mode', detail: 'Go to Settings → Mobile Network → Network Mode. Try switching to 3G only as 3G can penetrate buildings better than 4G or 5G in some areas.' }
+    ]
+  },
+  {
+    scenarioId: 'weak-signal-specific-area',
+    title: 'Weak coverage in a specific area',
+    explanation: 'Your signal issue only happens in one specific location. This is a coverage gap for your network provider in that area. It is not a fault with your device.',
+    signalRating: 'poor',
+    conditions: {
+      locationType: 'outdoors',
+      issueFrequency: 'one-location',
+      networkMode: null,
+      simStatus: 'active'
+    },
+    fixSteps: [
+      { step: 1, title: 'Check your provider\'s coverage map', detail: 'Visit your network provider\'s website and use their coverage checker to confirm the signal strength expected in that specific location.' },
+      { step: 2, title: 'Try a different network mode', detail: 'Go to Settings → Mobile Network → Network Mode and try switching between 4G, 3G and 2G to find which gives the best signal in that area.' },
+      { step: 3, title: 'Consider switching provider', detail: 'If you regularly need signal in that area and your provider has poor coverage there, it may be worth comparing coverage maps from other providers.' },
+      { step: 4, title: 'Enable Wi-Fi calling as a workaround', detail: 'If Wi-Fi is available in that location, enable Wi-Fi calling to make calls and send texts without relying on mobile signal.' }
+    ]
+  },
+  {
+    scenarioId: 'slow-data-3g',
+    title: 'Slow data on 3G network',
+    explanation: 'You are connected to a 3G network which has significantly slower data speeds than 4G or 5G. Your phone may be falling back to 3G due to limited 4G coverage in your area or a network mode setting.',
+    signalRating: 'fair',
+    conditions: {
+      locationType: null,
+      issueFrequency: 'everywhere',
+      networkMode: '3g',
+      simStatus: 'active'
+    },
+    fixSteps: [
+      { step: 1, title: 'Set your network mode to 4G preferred', detail: 'Go to Settings → Mobile Network → Network Mode and select 4G/LTE preferred or Auto. This allows your phone to use 4G when available.' },
+      { step: 2, title: 'Toggle airplane mode on and off', detail: 'This forces your phone to reconnect and may pick up a stronger 4G signal it was not previously using.' },
+      { step: 3, title: 'Check 4G coverage in your area', detail: 'Visit your provider\'s coverage map to confirm 4G is available where you are. If not, 3G may be the best available option.' },
+      { step: 4, title: 'Restart your phone', detail: 'A restart can clear the network connection and help your phone find and lock onto a better signal.' }
+    ]
+  },
+  {
+    scenarioId: 'slow-data-congestion',
+    title: 'Network congestion causing slow data',
+    explanation: 'You have signal but your mobile data is slow. You are in a busy area on 4G or 5G which suggests the network may be congested with too many users in the same area using the same mast.',
+    signalRating: 'fair',
+    conditions: {
+      locationType: 'outdoors',
+      issueFrequency: 'everywhere',
+      networkMode: '4g',
+      simStatus: 'active'
+    },
+    fixSteps: [
+      { step: 1, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm you have not used up your monthly data allowance. Many providers throttle speeds after the limit is reached.' },
+      { step: 2, title: 'Try moving slightly to a different location', detail: 'Network congestion is localised to specific masts. Moving even a short distance can connect you to a less busy mast.' },
+      { step: 3, title: 'Try at a different time of day', detail: 'Mobile networks are busiest between 8am-9am and 5pm-7pm. Data speeds are often faster early morning or late evening.' },
+      { step: 4, title: 'Check your APN settings', detail: 'Go to Settings → Mobile Network → Access Point Names and confirm your APN settings match your provider\'s recommended configuration.' }
+    ]
+  },
+  {
+    scenarioId: 'dropped-calls-interference',
+    title: 'Signal drops and interference',
+    explanation: 'Your signal drops in and out rather than being consistently weak. This is often caused by your phone switching between network masts or radio frequency interference in the area.',
+    signalRating: 'fair',
+    conditions: {
+      locationType: null,
+      issueFrequency: 'intermittent',
+      networkMode: null,
+      simStatus: 'active'
+    },
+    fixSteps: [
+      { step: 1, title: 'Manually select your network operator', detail: 'Go to Settings → Mobile Network → Network Operators → Search manually. Select your provider. This stops your phone automatically switching between masts.' },
+      { step: 2, title: 'Toggle airplane mode on and off', detail: 'This resets your network connection and forces your phone to reconnect to the strongest available mast.' },
+      { step: 3, title: 'Check for a phone case blocking signal', detail: 'Some metal or thick phone cases can interfere with signal reception. Try removing your case and testing signal strength.' },
+      { step: 4, title: 'Update your phone software', detail: 'Go to Settings → Software Update. Some signal drop issues are caused by software bugs that have been fixed in newer updates.' }
+    ]
+  },
+  {
+    scenarioId: 'good-signal-data-issue',
+    title: 'Good signal but data not working',
+    explanation: 'You have good signal bars but your mobile data is not working. This typically points to an APN configuration issue, a data allowance limit or a temporary network fault rather than a coverage problem.',
+    signalRating: 'good',
+    conditions: {
+      locationType: null,
+      issueFrequency: 'everywhere',
+      networkMode: '4g',
+      simStatus: 'active'
+    },
+    fixSteps: [
+      { step: 1, title: 'Toggle mobile data off and on', detail: 'Swipe down from the top of your screen and toggle mobile data off, wait 10 seconds and toggle it back on.' },
+      { step: 2, title: 'Check your APN settings', detail: 'Go to Settings → Mobile Network → Access Point Names. Your APN settings must match your provider\'s configuration exactly. Find the correct settings on your provider\'s support page.' },
+      { step: 3, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm your data allowance has not been used up. Providers often leave signal active but block data when the allowance is exceeded.' },
+      { step: 4, title: 'Reset network settings', detail: 'Go to Settings → General Management → Reset → Reset Network Settings. Note this will remove saved Wi-Fi passwords.' }
+    ]
+  }
+]
+
+// ============================================================
 // SEED FUNCTION
 // Clears existing data and inserts fresh data
 // ============================================================
@@ -697,6 +851,7 @@ const seedDatabase = async () => {
     await Question.deleteMany({})
     await Cause.deleteMany({})
     await Rule.deleteMany({})
+    await SignalScenario.deleteMany({})
 
     // Insert all new data
     console.log('Inserting issues...')
@@ -710,6 +865,9 @@ const seedDatabase = async () => {
 
     console.log('Inserting rules...')
     await Rule.insertMany(rulesData)
+
+    console.log('Inserting signal scenarios...')
+    await SignalScenario.insertMany(signalScenariosData)
 
     console.log('Database seeded successfully')
 
