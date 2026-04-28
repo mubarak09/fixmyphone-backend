@@ -32,6 +32,11 @@ issues, questions, running the scoring engine and saving sessions.
 | MongoDB Atlas | Cloud database |
 | Mongoose | MongoDB object modelling |
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 40871ac8447afb3ba01482107e5b42f5e1ac45b5
 ---
 
 ## Running locally
@@ -99,3 +104,5 @@ http://localhost:5000/api/health
 
 This project was developed as part of the Final Year Project module at 
 South East Technological University Waterford, 2025-26.
+
+
