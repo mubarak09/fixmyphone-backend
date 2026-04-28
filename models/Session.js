@@ -81,6 +81,9 @@ const SessionSchema = new mongoose.Schema({
   // The fix steps that were recommended
   fixSteps: [FixStepSchema],
 
+  // The iOS-specific fix steps that were recommended
+  iosFixSteps: [FixStepSchema],
+
   // When the session was created
   createdAt: {
     type: Date,

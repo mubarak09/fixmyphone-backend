@@ -26,8 +26,11 @@ const saveSession = async (req, res) => {
       causeTitle,
       causeDescription,
       answers,
-      fixSteps
+      fixSteps,
+      iosFixSteps
     } = req.body
+
+    console.log('iosFixSteps received:', iosFixSteps)
 
     // Validate that we have the required fields
     if (!categoryId || !categoryLabel || !causeTitle || !answers) {
@@ -41,7 +44,8 @@ const saveSession = async (req, res) => {
       causeTitle,
       causeDescription,
       answers,
-      fixSteps
+      fixSteps,
+      iosFixSteps
     })
 
     const savedSession = await newSession.save()
