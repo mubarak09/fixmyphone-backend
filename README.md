@@ -32,8 +32,6 @@ issues, questions, running the scoring engine and saving sessions.
 | MongoDB Atlas | Cloud database |
 | Mongoose | MongoDB object modelling |
 
-
-
 ---
 
 ## Running locally
