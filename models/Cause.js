@@ -57,7 +57,10 @@ const CauseSchema = new mongoose.Schema({
   },
 
   // Ordered list of fix steps
-  fixSteps: [FixStepSchema]
+  fixSteps: [FixStepSchema],
+
+  // Ordered list of fix steps specific to iOS devices
+  iosFixSteps: [FixStepSchema]
 
 })
 
