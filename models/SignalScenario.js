@@ -56,7 +56,10 @@ const SignalScenarioSchema = new mongoose.Schema({
   },
 
   // Ordered fix steps for this scenario
-  fixSteps: [FixStepSchema]
+  fixSteps: [FixStepSchema],
+
+  // Ordered list of fix steps specific to iOS devices
+  iosFixSteps: [FixStepSchema]
 
 })
 

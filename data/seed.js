@@ -416,7 +416,13 @@ const causesData = [
     fixSteps: [
       { step: 1, title: 'Check your network provider status page', detail: 'Visit your network provider\'s website or app and look for any reported outages in your area.' },
       { step: 2, title: 'Toggle airplane mode on and off', detail: 'Swipe down from the top of your screen, turn on airplane mode for 30 seconds, then turn it off again. This forces your phone to reconnect to the network.' },
-      { step: 3, title: 'Restart your phone', detail: 'A full restart can clear network faults. Hold the power button and select restart.' },
+      { step: 3, title: 'Restart your phone', detail: 'Hold the power button and select restart. A full restart can clear network faults.' },
+      { step: 4, title: 'Move to a different location', detail: 'If possible, move to a different area. If signal returns elsewhere, the issue is likely localised to that area.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check your network provider status page', detail: 'Visit your network provider\'s website or app and look for any reported outages in your area.' },
+      { step: 2, title: 'Toggle airplane mode on and off', detail: 'Go to Settings → tap Airplane Mode to turn it on, wait 30 seconds, then turn it off again. This forces your iPhone to reconnect to the network.' },
+      { step: 3, title: 'Restart your iPhone', detail: 'Press and hold the side button and volume down button until the slider appears. Drag the slider to turn off, then press the side button to turn back on.' },
       { step: 4, title: 'Move to a different location', detail: 'If possible, move to a different area. If signal returns elsewhere, the issue is likely localised to that area.' }
     ]
   },
@@ -429,6 +435,12 @@ const causesData = [
       { step: 2, title: 'Check your account is active', detail: 'Log into your provider\'s app or website to confirm your account is active and your plan has not expired.' },
       { step: 3, title: 'Test your SIM in another phone', detail: 'If possible, put your SIM into another phone to check if the problem follows the SIM or stays with your device.' },
       { step: 4, title: 'Contact your network provider', detail: 'If none of the above work, contact your provider directly. They can check if your SIM needs to be replaced or if there is an account issue.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Remove and reinsert your SIM card', detail: 'Power off your iPhone, use the SIM ejector tool to remove the SIM tray, take out the SIM card, wait 10 seconds, reinsert and power back on.' },
+      { step: 2, title: 'Check your account is active', detail: 'Log into your provider\'s app or website to confirm your account is active and your plan has not expired.' },
+      { step: 3, title: 'Reset network settings on iPhone', detail: 'Go to Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings. This clears all network configurations without deleting your data.' },
+      { step: 4, title: 'Contact your network provider', detail: 'If none of the above work, contact your provider directly. They can check if your SIM needs to be replaced or if there is an account issue.' }
     ]
   },
   {
@@ -440,6 +452,12 @@ const causesData = [
       { step: 2, title: 'Check your network mode settings', detail: 'Go to Settings → Mobile Network → Network Mode. Try switching between 4G and 3G to see if one gives a stronger signal in your area.' },
       { step: 3, title: 'Check coverage for your area online', detail: 'Visit your network provider\'s coverage checker and enter your location to see what level of coverage is expected in your area.' },
       { step: 4, title: 'Consider Wi-Fi calling', detail: 'If you are in a known weak area, enabling Wi-Fi calling allows calls and texts over your Wi-Fi connection instead of the mobile network.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Move to a window or go outside', detail: 'Building materials like concrete and metal block signals. Moving closer to a window or stepping outside can improve signal strength significantly.' },
+      { step: 2, title: 'Check your network mode on iPhone', detail: 'Go to Settings → Mobile Data → Mobile Data Options → Voice and Data. Try switching between 4G and 3G to find the strongest signal.' },
+      { step: 3, title: 'Check coverage for your area online', detail: 'Visit your network provider\'s coverage checker and enter your location to see what level of coverage is expected in your area.' },
+      { step: 4, title: 'Enable Wi-Fi calling on iPhone', detail: 'Go to Settings → Phone → Wi-Fi Calling and toggle it on. This routes calls over Wi-Fi when mobile signal is weak.' }
     ]
   },
   {
@@ -451,6 +469,12 @@ const causesData = [
       { step: 2, title: 'Toggle airplane mode on and off', detail: 'This forces your phone to reconnect to the network and can refresh your data connection.' },
       { step: 3, title: 'Check your APN settings', detail: 'Go to Settings → Mobile Network → Access Point Names. Make sure the APN settings match your provider\'s recommended settings.' },
       { step: 4, title: 'Try a different location', detail: 'Network congestion is more common in busy areas. If you are in a crowded location, moving slightly can sometimes give a better connection.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check your data allowance', detail: 'Log into your provider\'s app and check if you have used up your monthly data allowance. Some providers reduce speed after a certain limit.' },
+      { step: 2, title: 'Toggle airplane mode on and off', detail: 'Go to Settings → tap Airplane Mode on, wait 30 seconds, then turn it off. This refreshes your data connection.' },
+      { step: 3, title: 'Reset network settings on iPhone', detail: 'Go to Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings. This resets your APN settings to defaults which often fixes data issues.' },
+      { step: 4, title: 'Try a different location', detail: 'Network congestion is more common in busy areas. If you are in a crowded location, moving slightly can sometimes give a better connection.' }
     ]
   },
   {
@@ -461,6 +485,11 @@ const causesData = [
       { step: 1, title: 'Toggle airplane mode on and off', detail: 'This forces your phone to reconnect to the nearest strongest mast and can stop it switching between masts repeatedly.' },
       { step: 2, title: 'Manually select your network', detail: 'Go to Settings → Mobile Network → Network Operators → Search manually. Select your provider from the list.' },
       { step: 3, title: 'Restart your phone', detail: 'A restart can clear the network connection cache and help your phone find a stable connection.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Toggle airplane mode on and off', detail: 'Go to Settings → tap Airplane Mode on, wait 30 seconds, then turn it off. This forces your iPhone to reconnect to the strongest mast.' },
+      { step: 2, title: 'Manually select your network on iPhone', detail: 'Go to Settings → Mobile Data → Network Selection → turn off Automatic. Select your provider manually from the list.' },
+      { step: 3, title: 'Restart your iPhone', detail: 'Press and hold the side button and volume down until the slider appears. Drag to power off, then restart.' }
     ]
   },
   {
@@ -471,7 +500,13 @@ const causesData = [
       { step: 1, title: 'Check your available storage', detail: 'Go to Settings → Storage to see how much space is used and available.' },
       { step: 2, title: 'Delete unused apps', detail: 'Go through your apps and uninstall any you no longer use. Even freeing up 1-2GB can make a noticeable difference.' },
       { step: 3, title: 'Clear app caches', detail: 'Go to Settings → Apps, select each large app and tap Clear Cache. This removes temporary files without deleting your data.' },
-      { step: 4, title: 'Move photos and videos to cloud storage', detail: 'Use Google Photos or iCloud to back up and remove media from your device. Photos and videos are usually the biggest use of storage.' }
+      { step: 4, title: 'Move photos and videos to cloud storage', detail: 'Use Google Photos to back up and remove media from your device. Photos and videos are usually the biggest use of storage.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check your available storage', detail: 'Go to Settings → General → iPhone Storage to see a breakdown of what is using your space.' },
+      { step: 2, title: 'Offload unused apps', detail: 'Go to Settings → General → iPhone Storage → tap an app → Offload App. This removes the app but keeps its data. You can reinstall it anytime.' },
+      { step: 3, title: 'Enable iCloud Photos', detail: 'Go to Settings → Photos → iCloud Photos and turn it on. This moves your full resolution photos to iCloud and keeps smaller versions on your device.' },
+      { step: 4, title: 'Clear Safari cache', detail: 'Go to Settings → Safari → Clear History and Website Data. Safari cache can take up significant storage over time.' }
     ]
   },
   {
@@ -482,6 +517,11 @@ const causesData = [
       { step: 1, title: 'Close all background apps', detail: 'Press the recent apps button and swipe away all open apps. This frees up RAM immediately.' },
       { step: 2, title: 'Restrict background activity for apps', detail: 'Go to Settings → Apps → select an app → Battery → Restrict background activity.' },
       { step: 3, title: 'Restart your phone', detail: 'A restart closes all background processes and gives your phone a fresh start.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Close all background apps', detail: 'Swipe up from the bottom of the screen and pause to open the app switcher. Swipe up on each app preview to close it.' },
+      { step: 2, title: 'Restrict background app refresh', detail: 'Go to Settings → General → Background App Refresh. You can turn this off entirely or disable it for specific apps.' },
+      { step: 3, title: 'Restart your iPhone', detail: 'Press and hold the side button and volume down until the slider appears. Drag to power off then restart.' }
     ]
   },
   {
@@ -493,6 +533,12 @@ const causesData = [
       { step: 2, title: 'Check for further software updates', detail: 'Go to Settings → Software Update. Sometimes a follow-up patch is released to fix issues introduced by a previous update.' },
       { step: 3, title: 'Identify the problem app', detail: 'If the issue started after installing a specific app, try uninstalling it to see if performance improves.' },
       { step: 4, title: 'Clear the system cache partition', detail: 'On Android, this can be done through recovery mode. Search for the specific steps for your phone model. This does not delete your data.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Restart your iPhone', detail: 'Press and hold the side button and volume down until the slider appears. Drag to power off then restart.' },
+      { step: 2, title: 'Check for further iOS updates', detail: 'Go to Settings → General → Software Update. Apple often releases follow-up patches to fix bugs introduced in previous updates.' },
+      { step: 3, title: 'Delete and reinstall the problem app', detail: 'Press and hold the app icon → Remove App → Delete App. Then reinstall it from the App Store.' },
+      { step: 4, title: 'Restore iPhone via iTunes as a last resort', detail: 'Connect your iPhone to a computer, open iTunes or Finder, select your device and choose Restore iPhone. Back up everything first.' }
     ]
   },
   {
@@ -503,6 +549,11 @@ const causesData = [
       { step: 1, title: 'Reduce animations and visual effects', detail: 'Go to Settings → Developer Options → Window animation scale and set it to 0.5x. This makes the phone feel noticeably faster.' },
       { step: 2, title: 'Use lite versions of apps where available', detail: 'Many popular apps have lite versions that use less memory and processing power.' },
       { step: 3, title: 'Perform a factory reset as a last resort', detail: 'A factory reset removes all data and restores the phone to its original state. Back up everything first.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Enable Reduce Motion on iPhone', detail: 'Go to Settings → Accessibility → Motion → Reduce Motion and turn it on. This reduces animations and makes older iPhones feel faster.' },
+      { step: 2, title: 'Enable Low Power Mode', detail: 'Go to Settings → Battery → Low Power Mode. This reduces background activity and can improve responsiveness on older devices.' },
+      { step: 3, title: 'Erase all content and settings as a last resort', detail: 'Go to Settings → General → Transfer or Reset iPhone → Erase All Content and Settings. Back up to iCloud first.' }
     ]
   },
   {
@@ -514,6 +565,12 @@ const causesData = [
       { step: 2, title: 'Restrict background activity for the problem app', detail: 'Go to Settings → Apps → select the app → Battery → Restrict background activity.' },
       { step: 3, title: 'Uninstall the app if not needed', detail: 'If the problem app is not essential, uninstalling it is the most effective fix.' },
       { step: 4, title: 'Check for an app update', detail: 'Sometimes battery drain is caused by a bug in a specific version of an app. Updating it may resolve the issue.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check battery usage by app on iPhone', detail: 'Go to Settings → Battery. Scroll down to see battery usage by app over the last 24 hours or 10 days.' },
+      { step: 2, title: 'Turn off background app refresh for the problem app', detail: 'Go to Settings → General → Background App Refresh and turn it off for the app using the most battery.' },
+      { step: 3, title: 'Delete the app if not needed', detail: 'Press and hold the app icon → Remove App → Delete App. This is the most effective fix if the app is not essential.' },
+      { step: 4, title: 'Update the app from the App Store', detail: 'Open the App Store → tap your profile icon → scroll to see pending updates. Battery drain is often fixed in app updates.' }
     ]
   },
   {
@@ -525,6 +582,12 @@ const causesData = [
       { step: 2, title: 'Check which app is causing the heat', detail: 'Go to Settings → Battery → Battery Usage and look for apps using a high percentage.' },
       { step: 3, title: 'Reduce screen brightness and close background apps', detail: 'High brightness combined with multiple background apps puts extra load on the processor and battery.' },
       { step: 4, title: 'Check for app updates', detail: 'An app update may include optimisations that reduce processor usage.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Close the app and let your iPhone cool down', detail: 'Remove the case if you have one and place the iPhone on a flat cool surface for 10 minutes. Do not charge it while it is hot.' },
+      { step: 2, title: 'Check which app is causing the heat', detail: 'Go to Settings → Battery. Scroll down to see which apps have used the most battery. High battery use often causes heat.' },
+      { step: 3, title: 'Reduce screen brightness', detail: 'Go to Settings → Display and Brightness and reduce the brightness level. The screen is a major source of heat on iPhones.' },
+      { step: 4, title: 'Update the app from the App Store', detail: 'Open the App Store → tap your profile icon → update the problem app. Updates often include performance improvements.' }
     ]
   },
   {
@@ -536,6 +599,12 @@ const causesData = [
       { step: 2, title: 'Clean the charging port', detail: 'Use a soft dry toothbrush or compressed air to gently clean any dust or debris from the charging port.' },
       { step: 3, title: 'Try wireless charging if supported', detail: 'If your phone supports wireless charging, try this to determine if the charging port itself is the problem.' },
       { step: 4, title: 'Visit a repair centre', detail: 'If none of the above work, the charging port may need professional repair or replacement.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Try a different Lightning or USB-C cable and adapter', detail: 'Always use Apple certified MFi cables. Third party cables can cause charging issues. Try an original Apple cable if available.' },
+      { step: 2, title: 'Clean the Lightning or USB-C port', detail: 'Use a soft dry toothbrush or wooden toothpick to gently remove lint and debris from the port. Never use metal objects.' },
+      { step: 3, title: 'Try wireless charging if your iPhone supports it', detail: 'iPhone 8 and later support wireless charging. Try a Qi wireless charger to confirm if the port is the issue.' },
+      { step: 4, title: 'Visit an Apple Store or Apple Authorised Service Provider', detail: 'If none of the above work, book a Genius Bar appointment or visit an authorised repair centre.' }
     ]
   },
   {
@@ -543,10 +612,16 @@ const causesData = [
     title: 'Battery degradation over time',
     description: 'Phone batteries degrade with use and age. After 2 years a battery may only hold 80 percent of its original charge capacity.',
     fixSteps: [
-      { step: 1, title: 'Check your battery health', detail: 'On iPhone go to Settings → Battery → Battery Health. On Android check Settings → Battery.' },
+      { step: 1, title: 'Check your battery health', detail: 'On Android check Settings → Battery for battery health information.' },
       { step: 2, title: 'Enable battery saver mode', detail: 'Go to Settings → Battery → Battery Saver. This limits background activity and reduces power consumption.' },
       { step: 3, title: 'Reduce screen brightness and timeout', detail: 'The screen is the biggest drain on most phones. Reduce brightness and set the screen to turn off after 30 seconds.' },
       { step: 4, title: 'Consider a battery replacement', detail: 'If battery health is below 80 percent, a battery replacement is the most effective long-term solution.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check your battery health on iPhone', detail: 'Go to Settings → Battery → Battery Health and Charging. Apple shows your maximum capacity percentage here. Below 80 percent means the battery needs replacement.' },
+      { step: 2, title: 'Enable Low Power Mode', detail: 'Go to Settings → Battery → Low Power Mode. This reduces background activity, automatic downloads and some visual effects to extend battery life.' },
+      { step: 3, title: 'Turn on Optimised Battery Charging', detail: 'Go to Settings → Battery → Battery Health and Charging → Optimised Battery Charging. This reduces battery ageing by learning your charging routine.' },
+      { step: 4, title: 'Book a battery replacement at Apple', detail: 'If battery health is below 80 percent, go to Settings → Battery → Battery Health and Charging → Service to get a replacement, or book a Genius Bar appointment.' }
     ]
   },
   {
@@ -556,8 +631,14 @@ const causesData = [
     fixSteps: [
       { step: 1, title: 'Clear the app cache', detail: 'Go to Settings → Apps → select the app → Storage → Clear Cache.' },
       { step: 2, title: 'Clear the app data if cache clear did not work', detail: 'Go to Settings → Apps → select the app → Storage → Clear Data. Warning: this will reset the app to its default state.' },
-      { step: 3, title: 'Uninstall and reinstall the app', detail: 'Uninstalling and reinstalling gives the app a completely fresh installation which usually resolves persistent crashing issues.' },
-      { step: 4, title: 'Check for an app update', detail: 'Open the Play Store or App Store and check if there is an update available for the app.' }
+      { step: 3, title: 'Uninstall and reinstall the app', detail: 'Uninstalling and reinstalling gives the app a completely fresh installation.' },
+      { step: 4, title: 'Check for an app update', detail: 'Open the Play Store and check if there is an update available for the app.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Offload and reinstall the app', detail: 'Go to Settings → General → iPhone Storage → select the app → Offload App. Then reinstall it from the App Store. This clears corrupted data.' },
+      { step: 2, title: 'Delete and reinstall the app', detail: 'Press and hold the app icon → Remove App → Delete App. Then reinstall from the App Store. This gives a completely fresh installation.' },
+      { step: 3, title: 'Check for an app update', detail: 'Open the App Store → tap your profile icon → scroll to see pending updates. Corrupted data issues are often fixed in app updates.' },
+      { step: 4, title: 'Restart your iPhone', detail: 'A restart clears temporary files and memory. Press and hold the side button and volume down until the slider appears.' }
     ]
   },
   {
@@ -565,10 +646,16 @@ const causesData = [
     title: 'Software conflict after a system update',
     description: 'A recent system update may have caused a conflict with one or more of your apps leading to crashes or slow performance.',
     fixSteps: [
-      { step: 1, title: 'Restart your phone', detail: 'A restart after an update allows the system to complete any background processes and can resolve minor conflicts.' },
-      { step: 2, title: 'Update all your apps', detail: 'Open the Play Store or App Store and update all apps. Developers often release updates after a major OS update to fix compatibility issues.' },
+      { step: 1, title: 'Restart your phone', detail: 'A restart after an update allows the system to complete any background processes.' },
+      { step: 2, title: 'Update all your apps', detail: 'Open the Play Store and update all apps. Developers often release updates after a major OS update.' },
       { step: 3, title: 'Clear cache for affected apps', detail: 'Go to Settings → Apps → select the app → Storage → Clear Cache.' },
-      { step: 4, title: 'Check for a follow-up system update', detail: 'Go to Settings → Software Update. A follow-up patch may already be available to fix the issue.' }
+      { step: 4, title: 'Check for a follow-up system update', detail: 'Go to Settings → Software Update. A follow-up patch may already be available.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Restart your iPhone', detail: 'Press and hold the side button and volume down until the slider appears. Drag to power off then restart.' },
+      { step: 2, title: 'Update all your apps from the App Store', detail: 'Open the App Store → tap your profile icon → tap Update All. Developers release compatibility updates after major iOS updates.' },
+      { step: 3, title: 'Check for a follow-up iOS update', detail: 'Go to Settings → General → Software Update. Apple often releases follow-up patches quickly after a major update.' },
+      { step: 4, title: 'Delete and reinstall the affected app', detail: 'Press and hold the app → Remove App → Delete App. Reinstall from the App Store for a clean installation.' }
     ]
   },
   {
@@ -576,9 +663,15 @@ const causesData = [
     title: 'Router or home network issue',
     description: 'The problem appears to be with your router or home network rather than your phone itself.',
     fixSteps: [
-      { step: 1, title: 'Restart your router', detail: 'Unplug your router from the power socket, wait 30 seconds and plug it back in. Wait 2 minutes for it to fully restart before testing.' },
+      { step: 1, title: 'Restart your router', detail: 'Unplug your router from the power socket, wait 30 seconds and plug it back in. Wait 2 minutes before testing.' },
       { step: 2, title: 'Move closer to the router', detail: 'Wi-Fi signal weakens with distance and through walls. Test the connection when standing close to the router.' },
       { step: 3, title: 'Check if other devices have the same problem', detail: 'If other devices also have no internet it confirms the issue is with the router rather than your phone.' },
+      { step: 4, title: 'Contact your broadband provider', detail: 'If restarting the router does not resolve the issue your broadband provider may have a line fault or outage in your area.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Restart your router', detail: 'Unplug your router from the power socket, wait 30 seconds and plug it back in. Wait 2 minutes before testing.' },
+      { step: 2, title: 'Forget and rejoin the network on iPhone', detail: 'Go to Settings → Wi-Fi → tap the network name → Forget This Network. Then rejoin by selecting the network and entering the password.' },
+      { step: 3, title: 'Check if other devices have the same problem', detail: 'If other devices also have no internet it confirms the issue is with the router rather than your iPhone.' },
       { step: 4, title: 'Contact your broadband provider', detail: 'If restarting the router does not resolve the issue your broadband provider may have a line fault or outage in your area.' }
     ]
   },
@@ -587,18 +680,28 @@ const causesData = [
     title: 'Saved network settings causing connection issues',
     description: 'Your phone may have saved incorrect or outdated network settings for this Wi-Fi network which is preventing a proper connection.',
     fixSteps: [
-      { step: 1, title: 'Forget the network and reconnect', detail: 'Go to Settings → Wi-Fi, press and hold the network name, select Forget. Then reconnect by selecting the network and entering the password again.' },
-      { step: 2, title: 'Reset network settings', detail: 'Go to Settings → General Management → Reset → Reset Network Settings. This clears all saved Wi-Fi passwords and Bluetooth pairings.' },
-      { step: 3, title: 'Check the Wi-Fi password is correct', detail: 'Confirm you are using the correct password for the network. The password is usually on a label on the back of the router.' }
+      { step: 1, title: 'Forget the network and reconnect', detail: 'Go to Settings → Wi-Fi, press and hold the network name, select Forget. Then reconnect by entering the password again.' },
+      { step: 2, title: 'Reset network settings', detail: 'Go to Settings → General Management → Reset → Reset Network Settings.' },
+      { step: 3, title: 'Check the Wi-Fi password is correct', detail: 'The password is usually on a label on the back of the router.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Forget the network and reconnect on iPhone', detail: 'Go to Settings → Wi-Fi → tap the network name → Forget This Network. Then rejoin by selecting the network and entering the password.' },
+      { step: 2, title: 'Reset network settings on iPhone', detail: 'Go to Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings. Note this removes all saved Wi-Fi passwords.' },
+      { step: 3, title: 'Check the Wi-Fi password is correct', detail: 'The password is usually on a label on the back of the router. On a Mac you can find saved passwords in System Preferences → Network.' }
     ]
   },
   {
     causeId: 'bluetooth-interference',
     title: 'Bluetooth interference affecting connectivity',
-    description: 'Bluetooth and Wi-Fi both use a specific frequency band and can interfere with each other causing connectivity problems.',
+    description: 'Bluetooth and Wi-Fi both use the 2.4GHz frequency band and can interfere with each other causing connectivity problems.',
     fixSteps: [
       { step: 1, title: 'Turn Bluetooth off and test Wi-Fi', detail: 'Go to Settings → Bluetooth and toggle it off. Check if your Wi-Fi connection improves.' },
-      { step: 2, title: 'Switch your router to the 5GHz band', detail: 'If your router supports dual band, connect to the 5GHz network instead of 2.4GHz. The 5GHz band does not interfere with Bluetooth.' },
+      { step: 2, title: 'Switch your router to the 5GHz band', detail: 'If your router supports dual band, connect to the 5GHz network instead of 2.4GHz.' },
+      { step: 3, title: 'Move Bluetooth devices away from your router', detail: 'Keep Bluetooth speakers, headphones and other devices away from your router to reduce interference.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Turn Bluetooth off and test Wi-Fi on iPhone', detail: 'Go to Settings → Bluetooth and toggle it off. Check if your Wi-Fi connection improves.' },
+      { step: 2, title: 'Switch your router to the 5GHz band', detail: 'If your router supports dual band, go to Settings → Wi-Fi and connect to the 5GHz version of your network. The 5GHz band does not interfere with Bluetooth.' },
       { step: 3, title: 'Move Bluetooth devices away from your router', detail: 'Keep Bluetooth speakers, headphones and other devices away from your router to reduce interference.' }
     ]
   }
@@ -705,7 +808,14 @@ const signalScenariosData = [
       { step: 1, title: 'Check for a network outage', detail: 'Visit your network provider\'s website or app and check for any reported outages in your area.' },
       { step: 2, title: 'Remove and reinsert your SIM card', detail: 'Power off your phone, remove the SIM card, wait 10 seconds and reinsert it. Power back on and check for signal.' },
       { step: 3, title: 'Toggle airplane mode on and off', detail: 'Turn airplane mode on for 30 seconds then turn it off again. This forces your phone to search for a network.' },
-      { step: 4, title: 'Manually select network', detail: 'Go to Settings → Connections → Mobile Networks → Network Operators, then turn off Select Automatically and choose your network provider manually from the list.'},
+      { step: 4, title: 'Manually select network', detail: 'Go to Settings → Connections → Mobile Networks → Network Operators, then turn off Select Automatically and choose your network provider manually from the list.' },
+      { step: 5, title: 'Contact your network provider', detail: 'If none of the above work, contact your provider. They can check if your account is active and if there is a network issue in your area.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check for a network outage', detail: 'Visit your network provider\'s website or app and check for any reported outages in your area.' },
+      { step: 2, title: 'Remove and reinsert your SIM card', detail: 'Power off your iPhone, use the SIM ejector tool to open the SIM tray, remove the SIM, wait 10 seconds, reinsert and power back on.' },
+      { step: 3, title: 'Toggle airplane mode on and off', detail: 'Go to Settings → tap Airplane Mode on, wait 30 seconds, then turn it off. This forces your iPhone to search for a network.' },
+      { step: 4, title: 'Manually select network', detail: 'Go to Settings → Mobile Service → Network Selection → then turn off Select Automatically and choose your network provider manually from the list.' },
       { step: 5, title: 'Contact your network provider', detail: 'If none of the above work, contact your provider. They can check if your account is active and if there is a network issue in your area.' }
     ]
   },
@@ -722,9 +832,15 @@ const signalScenariosData = [
     },
     fixSteps: [
       { step: 1, title: 'Remove and reinsert your SIM card', detail: 'Power off your phone completely, remove the SIM card using the SIM tray tool, inspect it for damage, then reinsert and power back on.' },
-      { step: 2, title: 'Manually select network', detail: 'Go to Settings → Connections → Mobile Networks → Network Operators, then turn off Select Automatically and choose your network provider manually from the list.'},
-      { step: 3, title: 'Test your SIM in another phone', detail: 'Insert your SIM into a different phone to check if the SIM itself is working. If it works in another phone the issue is with your device.' },
-      { step: 4, title: 'Request a SIM replacement', detail: 'Contact your network provider and request a free SIM replacement. This is a common fix for SIM recognition issues.' }
+      { step: 2, title: 'Manually select network', detail: 'Go to Settings → Connections → Mobile Networks → Network Operators, then turn off Select Automatically and choose your network provider manually from the list and check for signal strength.' },
+      { step: 3, title: 'Test your SIM in another phone', detail: 'Insert your SIM into a different phone to check if the SIM itself is working.' },
+      { step: 4, title: 'Request a SIM replacement', detail: 'Contact your network provider and request a free SIM replacement.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Remove and reinsert your SIM card', detail: 'Power off your iPhone, use the SIM ejector tool to open the SIM tray, inspect the SIM for damage, reinsert and power back on.' },
+      { step: 2, title: 'Manually select network', detail: 'Go to Settings → Mobile Service → Network Selection → then turn off Select Automatically and choose your network provider manually from the list and check for signal strength.' },
+      { step: 3, title: 'Check for a carrier settings update', detail: 'Go to Settings → General → About. If a carrier settings update is available a prompt will appear automatically. Tap Update.' },
+      { step: 4, title: 'Request a SIM replacement', detail: 'Contact your network provider and request a free SIM replacement or visit an Apple Store for assistance.' }
     ]
   },
   {
@@ -743,6 +859,12 @@ const signalScenariosData = [
       { step: 2, title: 'Go to a higher floor if possible', detail: 'Signal strength often improves on higher floors as there are fewer obstacles between you and the nearest mast.' },
       { step: 3, title: 'Enable Wi-Fi calling', detail: 'Go to Settings → Phone → Wi-Fi Calling and enable it. This routes your calls and texts over Wi-Fi when mobile signal is weak.' },
       { step: 4, title: 'Check your network mode', detail: 'Go to Settings → Mobile Network → Network Mode. Try switching to 3G only as 3G can penetrate buildings better than 4G or 5G in some areas.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Move closer to a window', detail: 'Glass blocks far less signal than walls. Moving near a window can dramatically improve your signal strength indoors.' },
+      { step: 2, title: 'Go to a higher floor if possible', detail: 'Signal strength often improves on higher floors as there are fewer obstacles between you and the nearest mast.' },
+      { step: 3, title: 'Enable Wi-Fi Calling on iPhone', detail: 'Go to Settings → Phone → Wi-Fi Calling → Enable Wi-Fi Calling. This routes calls and texts over Wi-Fi when mobile signal is weak.' },
+      { step: 4, title: 'Change network selection on iPhone', detail: 'Go to Settings → Mobile Data → Mobile Data Options → Voice and Data. Try selecting 3G as it penetrates buildings better than 4G or 5G in some areas.' }
     ]
   },
   {
@@ -761,6 +883,12 @@ const signalScenariosData = [
       { step: 2, title: 'Try a different network mode', detail: 'Go to Settings → Mobile Network → Network Mode and try switching between 4G, 3G and 2G to find which gives the best signal in that area.' },
       { step: 3, title: 'Consider switching provider', detail: 'If you regularly need signal in that area and your provider has poor coverage there, it may be worth comparing coverage maps from other providers.' },
       { step: 4, title: 'Enable Wi-Fi calling as a workaround', detail: 'If Wi-Fi is available in that location, enable Wi-Fi calling to make calls and send texts without relying on mobile signal.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check your provider\'s coverage map', detail: 'Visit your network provider\'s website and use their coverage checker to confirm the signal strength expected in that specific location.' },
+      { step: 2, title: 'Try a different network mode on iPhone', detail: 'Go to Settings → Mobile Data → Mobile Data Options → Voice and Data. Try switching between 4G and 3G to find which gives the best signal.' },
+      { step: 3, title: 'Consider switching provider', detail: 'If you regularly need signal in that area and your provider has poor coverage there, it may be worth comparing coverage maps from other providers.' },
+      { step: 4, title: 'Enable Wi-Fi Calling as a workaround', detail: 'Go to Settings → Phone → Wi-Fi Calling → Enable Wi-Fi Calling. This allows calls over Wi-Fi when mobile signal is unavailable.' }
     ]
   },
   {
@@ -775,10 +903,16 @@ const signalScenariosData = [
       simStatus: 'active'
     },
     fixSteps: [
-      { step: 1, title: 'Set your network mode to 4G preferred', detail: 'Go to Settings → Mobile Network → Network Mode and select 4G/LTE preferred or Auto. This allows your phone to use 4G when available.' },
-      { step: 2, title: 'Toggle airplane mode on and off', detail: 'This forces your phone to reconnect and may pick up a stronger 4G signal it was not previously using.' },
-      { step: 3, title: 'Check 4G coverage in your area', detail: 'Visit your provider\'s coverage map to confirm 4G is available where you are. If not, 3G may be the best available option.' },
+      { step: 1, title: 'Set your network mode to 4G preferred', detail: 'Go to Settings → Mobile Network → Network Mode and select 4G/LTE preferred or Auto.' },
+      { step: 2, title: 'Toggle airplane mode on and off', detail: 'This forces your phone to reconnect and may pick up a stronger 4G signal.' },
+      { step: 3, title: 'Check 4G coverage in your area', detail: 'Visit your provider\'s coverage map to confirm 4G is available where you are.' },
       { step: 4, title: 'Restart your phone', detail: 'A restart can clear the network connection and help your phone find and lock onto a better signal.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Set your network mode to 4G on iPhone', detail: 'Go to Settings → Mobile Data → Mobile Data Options → Voice and Data. Select 4G to allow your iPhone to use 4G when available.' },
+      { step: 2, title: 'Toggle airplane mode on and off', detail: 'Go to Settings → tap Airplane Mode on, wait 30 seconds, then turn it off. This may connect your iPhone to a stronger 4G signal.' },
+      { step: 3, title: 'Check 4G coverage in your area', detail: 'Visit your provider\'s coverage map to confirm 4G is available where you are.' },
+      { step: 4, title: 'Restart your iPhone', detail: 'Press and hold the side button and volume down until the slider appears. Drag to power off then restart.' }
     ]
   },
   {
@@ -793,10 +927,16 @@ const signalScenariosData = [
       simStatus: 'active'
     },
     fixSteps: [
-      { step: 1, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm you have not used up your monthly data allowance. Many providers throttle speeds after the limit is reached.' },
+      { step: 1, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm you have not used up your monthly data allowance.' },
       { step: 2, title: 'Try moving slightly to a different location', detail: 'Network congestion is localised to specific masts. Moving even a short distance can connect you to a less busy mast.' },
       { step: 3, title: 'Try at a different time of day', detail: 'Mobile networks are busiest between 8am-9am and 5pm-7pm. Data speeds are often faster early morning or late evening.' },
       { step: 4, title: 'Check your APN settings', detail: 'Go to Settings → Mobile Network → Access Point Names and confirm your APN settings match your provider\'s recommended configuration.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm you have not used up your monthly data allowance.' },
+      { step: 2, title: 'Try moving slightly to a different location', detail: 'Network congestion is localised to specific masts. Moving even a short distance can connect you to a less busy mast.' },
+      { step: 3, title: 'Try at a different time of day', detail: 'Mobile networks are busiest between 8am-9am and 5pm-7pm. Data speeds are often faster early morning or late evening.' },
+      { step: 4, title: 'Reset network settings on iPhone', detail: 'Go to Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings. This resets your APN configuration to defaults.' }
     ]
   },
   {
@@ -811,10 +951,16 @@ const signalScenariosData = [
       simStatus: 'active'
     },
     fixSteps: [
-      { step: 1, title: 'Manually select your network operator', detail: 'Go to Settings → Mobile Network → Network Operators → Search manually. Select your provider. This stops your phone automatically switching between masts.' },
+      { step: 1, title: 'Manually select your network operator', detail: 'Go to Settings → Mobile Network → Network Operators → Search manually. Select your provider.' },
       { step: 2, title: 'Toggle airplane mode on and off', detail: 'This resets your network connection and forces your phone to reconnect to the strongest available mast.' },
       { step: 3, title: 'Check for a phone case blocking signal', detail: 'Some metal or thick phone cases can interfere with signal reception. Try removing your case and testing signal strength.' },
       { step: 4, title: 'Update your phone software', detail: 'Go to Settings → Software Update. Some signal drop issues are caused by software bugs that have been fixed in newer updates.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Manually select your network operator on iPhone', detail: 'Go to Settings → Mobile Data → Network Selection → turn off Automatic. Select your provider manually from the list.' },
+      { step: 2, title: 'Toggle airplane mode on and off', detail: 'Go to Settings → tap Airplane Mode on, wait 30 seconds, then turn it off. This forces your iPhone to reconnect to the strongest mast.' },
+      { step: 3, title: 'Check for a case blocking signal', detail: 'Some metal or thick cases can interfere with signal reception. Try removing your case and testing signal strength.' },
+      { step: 4, title: 'Update iOS', detail: 'Go to Settings → General → Software Update. Some signal drop issues are caused by iOS bugs that have been fixed in newer updates.' }
     ]
   },
   {
@@ -830,9 +976,15 @@ const signalScenariosData = [
     },
     fixSteps: [
       { step: 1, title: 'Toggle mobile data off and on', detail: 'Swipe down from the top of your screen and toggle mobile data off, wait 10 seconds and toggle it back on.' },
-      { step: 2, title: 'Check your APN settings', detail: 'Go to Settings → Mobile Network → Access Point Names. Your APN settings must match your provider\'s configuration exactly. Find the correct settings on your provider\'s support page.' },
-      { step: 3, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm your data allowance has not been used up. Providers often leave signal active but block data when the allowance is exceeded.' },
-      { step: 4, title: 'Reset network settings', detail: 'Go to Settings → General Management → Reset → Reset Network Settings. Note this will remove saved Wi-Fi passwords.' }
+      { step: 2, title: 'Check your APN settings', detail: 'Go to Settings → Mobile Network → Access Point Names. Your APN settings must match your provider\'s configuration exactly.' },
+      { step: 3, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm your data allowance has not been used up.' },
+      { step: 4, title: 'Reset network settings', detail: 'Go to Settings → General Management → Reset → Reset Network Settings.' }
+    ],
+    iosFixSteps: [
+      { step: 1, title: 'Toggle mobile data off and on', detail: 'Go to Settings → Mobile Data and toggle it off, wait 10 seconds and toggle it back on.' },
+      { step: 2, title: 'Check your data allowance', detail: 'Log into your provider\'s app and confirm your data allowance has not been used up. Providers often leave signal active but block data when the allowance is exceeded.' },
+      { step: 3, title: 'Check for a carrier settings update', detail: 'Go to Settings → General → About. If a carrier settings update is available a prompt will appear. Tap Update to install it.' },
+      { step: 4, title: 'Reset network settings on iPhone', detail: 'Go to Settings → General → Transfer or Reset iPhone → Reset → Reset Network Settings.' }
     ]
   }
 ]
