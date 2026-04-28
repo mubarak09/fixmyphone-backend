@@ -625,8 +625,9 @@ const rulesData = [
   { issueId: 'signal', questionId: 'q3', answerId: 'b', causeId: 'network-outage', score: 2 },
   { issueId: 'signal', questionId: 'q3', answerId: 'd', causeId: 'weak-coverage', score: 2 },
   { issueId: 'signal', questionId: 'q5', answerId: 'c', causeId: 'network-outage', score: 2 },
-  { issueId: 'signal', questionId: 'q6', answerId: 'a', causeId: 'sim-issue', score: 3 },
+  { issueId: 'signal', questionId: 'q6', answerId: 'a', causeId: 'sim-issue', score: 6 },
   { issueId: 'signal', questionId: 'q6', answerId: 'b', causeId: 'sim-issue', score: 3 },
+  { issueId: 'signal', questionId: 'q3', answerId: 'c', causeId: 'sim-issue', score: 2 },
 
   // ---- PERFORMANCE RULES ----
   { issueId: 'performance', questionId: 'q1', answerId: 'a', causeId: 'low-storage', score: 2 },
@@ -641,6 +642,8 @@ const rulesData = [
   { issueId: 'performance', questionId: 'q3', answerId: 'c', causeId: 'too-many-background-apps', score: 2 },
   { issueId: 'performance', questionId: 'q3', answerId: 'c', causeId: 'low-storage', score: 2 },
   { issueId: 'performance', questionId: 'q4', answerId: 'c', causeId: 'old-hardware', score: 3 },
+  { issueId: 'performance', questionId: 'q5', answerId: 'c', causeId: 'old-hardware', score: 5 },
+  { issueId: 'performance', questionId: 'q2', answerId: 'c', causeId: 'too-many-background-apps', score: 4 },
 
   // ---- BATTERY RULES ----
   { issueId: 'battery', questionId: 'q1', answerId: 'a', causeId: 'battery-draining-app', score: 3 },
