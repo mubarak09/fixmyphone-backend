@@ -32,40 +32,6 @@ issues, questions, running the scoring engine and saving sessions.
 | MongoDB Atlas | Cloud database |
 | Mongoose | MongoDB object modelling |
 
-
----
-
-## Project Structure
-
-fixmyphone-backend/
-├── src/
-│   ├── controllers/
-│   │   ├── issueController.js
-│   │   ├── questionController.js
-│   │   ├── diagnoseController.js
-│   │   ├── signalController.js
-│   │   └── sessionController.js
-│   ├── models/
-│   │   ├── Issue.js
-│   │   ├── Question.js
-│   │   ├── Session.js
-│   │   └── SignalScenario.js
-│   ├── routes/
-│   │   ├── issues.js
-│   │   ├── questions.js
-│   │   ├── diagnose.js
-│   │   ├── signal.js
-│   │   └── sessions.js
-│   ├── utils/
-│   │   ├── scoringEngine.js
-│   │   └── signalMatcher.js
-│   ├── config/
-│   │   └── database.js
-│   └── server.js
-├── .env
-├── package.json
-└── README.md
-
 ---
 
 ## Running locally
@@ -93,12 +59,12 @@ MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/fixmyphone?
 PORT=5000
 ```
 4. Seed the database with initial data
-```bash
+```
 node data/seed.js
 ```
 
 5. Start the development server
-```bash
+```
 npm run dev
 ```
 
