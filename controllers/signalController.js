@@ -35,19 +35,34 @@ const getSignalScenario = async (req, res) => {
 
     // Score each scenario based on how well it matches the user's context
     const scoredScenarios = scenarios.map((scenario) => {
-    let score = 0
-    const conditions = scenario.conditions
+      let score = 0
+      const conditions = scenario.conditions
 
-    // Each matching condition adds points to the score
-    // Null conditions in the scenario mean they match any value
-    // networkMode gets double weight as it is the most specific condition
-    if (conditions.locationType === null || conditions.locationType === locationType) score += 1
-    if (conditions.issueFrequency === null || conditions.issueFrequency === issueFrequency) score += 1
-    if (conditions.networkMode === null || conditions.networkMode === networkMode) score += 1
-    if (conditions.networkMode !== null && conditions.networkMode === networkMode) score += 2
-    if (conditions.simStatus === null || conditions.simStatus === simStatus) score += 1
+      // Matching a specific condition adds points
+      // Not matching a specific condition subtracts points
+      // Null conditions are neutral and neither add nor subtract
 
-    return { scenario, score }
+      if (conditions.locationType !== null) {
+        if (conditions.locationType === locationType) score += 2
+        else score -= 2
+      }
+
+      if (conditions.issueFrequency !== null) {
+        if (conditions.issueFrequency === issueFrequency) score += 2
+        else score -= 2
+      }
+
+      if (conditions.networkMode !== null) {
+        if (conditions.networkMode === networkMode) score += 3
+        else score -= 3
+      }
+
+      if (conditions.simStatus !== null) {
+        if (conditions.simStatus === simStatus) score += 2
+        else score -= 2
+      }
+
+      return { scenario, score }
     })
 
     // Sort by score descending to find the best match
