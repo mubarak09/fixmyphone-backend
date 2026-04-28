@@ -89,9 +89,9 @@ http://localhost:5000/api/health
 | issues | 5 | Issue category definitions |
 | questions | 25 | Q&A questions per category |
 | causes | 18 | Possible causes with fix steps |
-| rules | 60 | Scoring rules linking answers to causes |
+| rules | 63 | Scoring rules linking answers to causes |
 | signalscenarios | 8 | Simulated signal scenarios |
-| sessions | dynamic | Saved user troubleshooting sessions |
+| sessions |  | Saved user troubleshooting sessions |
 
 ---
 
